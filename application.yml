@@ -1,0 +1,4 @@
+spring:
+  application:
+    name:
+      KT_CLOUD_CONFIG_SERVER
