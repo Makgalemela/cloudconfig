@@ -1,2 +1,101 @@
-      
-REDIS_SERVER_PORT : 9736
+KT_SERVICE_IP: kt-service
+NOTE_MYSQL_DB_HOST: krysznatec.dedicated.co.za
+NOTE_MYSQL_DB_NAME: Krysznatec
+NOTE_MYSQL_DB_PORT: 3306
+NOTE_SERVICE_URL: localhost
+REDIS_SERVER_IP: localhost
+REDIS_SERVER_PASSWORD: ''
+REDIS_SERVER_PORT: 9736
+api:
+    zuul:
+        actuator:
+            url:
+                path: /actuator/*
+authorizationTokenHeaderName: Authorization
+authorizationTokenPrefix: Bearer
+endpoints:
+    cors:
+        allowed-headers: '*'
+        allowed-methods: '*'
+        allowed-origins: '*'
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: ${EUREKA_SERVER:http://${NOTE_SERVICE_URL}:9000/eureka}
+    instance:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+expirationTime: 864000000
+management:
+    endpoints:
+        web:
+            exposure:
+                include: beans,health,routes,httptrace,mappings
+
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        password: ${MYSQL_DATABASE_PASSWORD:matomeA$123}
+        url: jdbc:mysql://${NOTE_MYSQL_DB_HOST}:${NOTE_MYSQL_DB_PORT}/${NOTE_MYSQL_DB_NAME}?useSSL=true&autoReconnect=true
+        username: ${MYSQL_DATABASE_USER:krysznatec_cloud}
+    devtools:
+        restart:
+            enabled: true
+    jpa:
+        database: MYSQL
+        database-platform: 'org.hibernate.dialect.MySQL8Dialect '
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: false
+    redis:
+        host: ${REDIS_SERVER_IP}
+        jedis:
+            pool:
+                max-active: 40
+                max-idle: 5
+                max-wait: 10000
+                min-idle: 2
+        password: ${REDIS_SERVER_PASSWORD}
+        port: ${REDIS_SERVER_PORT}
+        timeout: 10000
+    session:
+        redis:
+            flush-mode: 'on-save '
+tokenSecret: hfgry463hf746hf573ydh475fhy5739
+zuul:
+    host:
+        connect-timeout-millis: 600000
+        socket-timeout-millis: 600000
+    ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+    ignored-services: '*'
+    routes:
+        awsservice:
+            path: /api-aws/**
+            serviceId: awsservice
+            stripPrefix: false
+            url: http://localhost:9002
+        azureservice:
+            path: /api-azure/**
+            serviceId: azureservice
+            stripPrefix: false
+            url: http://localhost:9003
+        cloudgateway:
+            path: /api-gateway/**
+            serviceId: cloudgateway
+            stripPrefix: false
+        ibmservice:
+            path: /api-ibm/**
+            serviceId: ibmservice
+            stripPrefix: false
+            url: http://localhost:9004
+        ktservice:
+            path: /api/**
+            serviceId: ktservice
+            stripPrefix: false
+            url: http://${KT_SERVICE_IP}:9005
+    sensitive-headers: Cookie,Set-Cookie
+
+
