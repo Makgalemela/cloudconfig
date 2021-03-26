@@ -55,9 +55,9 @@ spring:
         jedis:
             pool:
                 max-active: 40
-                max-idle: 5
+                max-idle: 30
                 max-wait: 10000
-                min-idle: 2
+                min-idle: 10
         password: ${REDIS_SERVER_PASSWORD}
         port: ${REDIS_SERVER_PORT}
         timeout: 10000
