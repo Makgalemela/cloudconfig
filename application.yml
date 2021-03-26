@@ -1,7 +1,2 @@
-spring:
-  application:
-    name:
-      KT_CLOUD_CONFIG_SERVER
-
       
 REDIS_SERVER_PORT : 9736
