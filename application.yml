@@ -34,7 +34,7 @@ management:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
         password: ${MYSQL_DATABASE_PASSWORD:matomeA$123}
-        url: jdbc:mysql://${NOTE_MYSQL_DB_HOST}:${NOTE_MYSQL_DB_PORT}/${NOTE_MYSQL_DB_NAME}?useSSL=true&autoReconnect=true
+        url: jdbc:mysql://krysznatec.dedicated.co.za:3306/Krysznatec?useSSL=true&autoReconnect=true
         username: ${MYSQL_DATABASE_USER:krysznatec_cloud}
     devtools:
         restart:
