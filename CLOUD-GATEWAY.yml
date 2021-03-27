@@ -11,8 +11,8 @@ spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
         password: ${MYSQL_DATABASE_PASSWORD:possibility@3733}
-        url: jdbc:mysql://${NOTE_MYSQL_DB_HOST}:${NOTE_MYSQL_DB_PORT}/${NOTE_MYSQL_DB_NAME}?useSSL=true&autoReconnect=true
-        username: ${MYSQL_DATABASE_USER:krysznatec_cloud}
+        url: jdbc:mysql://database-service:3306/krysznate?useSSL=true&autoReconnect=true
+        username: ${MYSQL_DATABASE_USER:matome}
 
 zuul:
     host:
