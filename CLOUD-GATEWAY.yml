@@ -1,8 +1,7 @@
 KT_SERVICE_IP: kt-service
 NOTE_MYSQL_DB_HOST: database-service
-NOTE_MYSQL_DB_NAME: Krysznatec
+NOTE_MYSQL_DB_NAME: krysznatec
 NOTE_MYSQL_DB_PORT: 3306
-
 api:
     zuul:
         actuator:
