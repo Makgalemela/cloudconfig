@@ -51,11 +51,11 @@ spring:
                 max-wait: 10000
                 min-idle: 10
         password: ''
-        port: 9736
+        port: 3679
         timeout: 10000
     session:
         redis:
-            flush-mode: 'on-save'
+            flush-mode: IMMEDIATE
 
 
 # Token secret config
