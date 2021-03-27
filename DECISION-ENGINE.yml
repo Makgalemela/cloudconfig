@@ -1,0 +1,42 @@
+MYSQL_DB_HOST: krysznatec.dedicated.co.za
+MYSQL_DB_NAME: Krysznatec
+MYSQL_DB_PORT: 3306
+cloud:
+    service:
+        url: http://localhost:9002/
+dataimport:
+    fileupload:
+        dir: ${user.home}/Documents
+
+logging:
+    file:
+        name: ${user.home}/Documents/krysznatec.log
+    level:
+        org:
+            hibernate: ERROR
+            springframework:
+                web: DEBUG
+spring:
+    data:
+        redis:
+            repositories:
+                enabled: false
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: '@GMAIL.com3733'
+        url: jdbc:mysql://${MYSQL_DB_HOST}:${MYSQL_DB_PORT}/${MYSQL_DB_NAME}?useSSL=false&autoReconnect=true
+        username: rootkt
+    mail:
+        host: mail.krysznatec.com
+        password: '@KryTec@2020'
+        port: 587
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+        username: info@krysznatec.com
+    main:
+        allow-bean-definition-overriding: true
+    
