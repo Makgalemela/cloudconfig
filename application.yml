@@ -43,15 +43,15 @@ spring:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         show-sql: false
     redis:
-        host: ${REDIS_SERVER_IP}
+        host: redis-service
         jedis:
             pool:
                 max-active: 40
                 max-idle: 30
                 max-wait: 10000
                 min-idle: 10
-        password: ${REDIS_SERVER_PASSWORD}
-        port: ${REDIS_SERVER_PORT}
+        password: ''
+        port: 6379
         timeout: 10000
     session:
         redis:
