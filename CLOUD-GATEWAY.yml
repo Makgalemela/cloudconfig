@@ -1,8 +1,7 @@
 KT_SERVICE_IP: kt-service
-NOTE_MYSQL_DB_HOST: krysznatec.dedicated.co.za
+NOTE_MYSQL_DB_HOST: database-service
 NOTE_MYSQL_DB_NAME: Krysznatec
 NOTE_MYSQL_DB_PORT: 3306
-NOTE_SERVICE_URL: localhost
 
 api:
     zuul:
@@ -12,7 +11,7 @@ api:
 spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        password: ${MYSQL_DATABASE_PASSWORD:matomeA$123}
+        password: ${MYSQL_DATABASE_PASSWORD:possibility@3733}
         url: jdbc:mysql://${NOTE_MYSQL_DB_HOST}:${NOTE_MYSQL_DB_PORT}/${NOTE_MYSQL_DB_NAME}?useSSL=true&autoReconnect=true
         username: ${MYSQL_DATABASE_USER:krysznatec_cloud}
 

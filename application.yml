@@ -4,7 +4,7 @@
 
 #NOT NEEDED
 
-REDIS_SERVER_IP: localhost
+REDIS_SERVER_IP: redis-service
 REDIS_SERVER_PASSWORD: ''
 REDIS_SERVER_PORT: 6379
 
@@ -19,7 +19,7 @@ endpoints:
 eureka:
     client:
         serviceUrl:
-            defaultZone: ${EUREKA_SERVER:http://localhost:9000/eureka}
+            defaultZone: ${EUREKA_SERVER:http://discovery-service:9000/eureka}
     instance:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 expirationTime: 864000000
