@@ -22,10 +22,10 @@ spring:
             repositories:
                 enabled: false
     datasource:
-        driverClassName: com.mysql.jdbc.Driver
-        password: '@GMAIL.com3733'
-        url: jdbc:mysql://${MYSQL_DB_HOST}:${MYSQL_DB_PORT}/${MYSQL_DB_NAME}?useSSL=false&autoReconnect=true
-        username: rootkt
+        driverClassName: com.mysql.cj.jdbc.Driver
+        password: ${MYSQL_DATABASE_PASSWORD:possibility@3733}
+        url: jdbc:mysql://database-service:3306/krysznatec?useSSL=true&autoReconnect=true
+        username: ${MYSQL_DATABASE_USER:matome}
     mail:
         host: mail.krysznatec.com
         password: '@KryTec@2020'
