@@ -39,7 +39,7 @@ zuul:
             serviceId: ibmservice
             stripPrefix: false
             url: http://localhost:9004
-         DECISION-ENGINE:
+        DECISION-ENGINE:
             path: /api/**
             serviceId: DECISION-ENGINE
             stripPrefix: false
