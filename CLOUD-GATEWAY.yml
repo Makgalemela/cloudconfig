@@ -1,4 +1,3 @@
-KT_SERVICE_IP: kt-service
 NOTE_MYSQL_DB_HOST: database-service
 NOTE_MYSQL_DB_NAME: krysznatec
 NOTE_MYSQL_DB_PORT: 3306
@@ -40,11 +39,11 @@ zuul:
             serviceId: ibmservice
             stripPrefix: false
             url: http://localhost:9004
-        ktservice:
+         DECISION-ENGINE:
             path: /api/**
-            serviceId: ktservice
+            serviceId: DECISION-ENGINE
             stripPrefix: false
-            url: http://${KT_SERVICE_IP}:9005
+            url: http://krysznatec-service:9005
     sensitive-headers: Cookie,Set-Cookie
 
 
