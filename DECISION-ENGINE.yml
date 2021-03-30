@@ -6,7 +6,7 @@ cloud:
         url: http://localhost:9002/
 dataimport:
     fileupload:
-        dir: ${user.home}/Documents
+        dir: /home/Documents
 
 logging:
     file:
