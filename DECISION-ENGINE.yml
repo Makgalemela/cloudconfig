@@ -28,7 +28,7 @@ spring:
         username: ${MYSQL_DATABASE_USER:krysznatec}
     mail:
         host: mail.krysznatec.com
-        password: '@KryTec@2020'
+        password: 'krY5tEc@2022'
         port: 587
         properties:
             mail:
