@@ -23,9 +23,9 @@ spring:
                 enabled: false
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        password: ${MYSQL_DATABASE_PASSWORD:possibility@3733}
+        password: ${MYSQL_DATABASE_PASSWORD:krysznatec@2021}
         url: jdbc:mysql://database-service:3306/krysznatec?useSSL=true&autoReconnect=true
-        username: ${MYSQL_DATABASE_USER:matome}
+        username: ${MYSQL_DATABASE_USER:krysznatec}
     mail:
         host: mail.krysznatec.com
         password: '@KryTec@2020'
