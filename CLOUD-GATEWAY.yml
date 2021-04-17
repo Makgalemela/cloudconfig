@@ -33,9 +33,9 @@ zuul:
             serviceId: azureservice
             stripPrefix: false
             url: http://localhost:9003
-        cloudgateway:
+        CLOUD-GATEWAY:
             path: /api-gateway/**
-            serviceId: cloudgateway
+            serviceId: CLOUD-GATEWAY
             stripPrefix: false
         ibmservice:
             path: /api-ibm/**
