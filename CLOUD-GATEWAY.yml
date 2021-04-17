@@ -37,6 +37,7 @@ zuul:
             path: /api-gateway/**
             serviceId: CLOUD-GATEWAY
             stripPrefix: false
+            url: http://gateway-service:9001
         ibmservice:
             path: /api-ibm/**
             serviceId: ibmservice
