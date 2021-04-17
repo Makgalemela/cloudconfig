@@ -19,14 +19,14 @@ eureka:
             defaultZone: ${EUREKA_SERVER:http://discovery-service:9000/eureka}
     instance:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        hostname: localhost
+        
 expirationTime: 864000000
 management:
     endpoints:
         web:
             exposure:
                 include: beans,health,routes,httptrace,mappings
-
-
 spring:
     devtools:
         restart:
