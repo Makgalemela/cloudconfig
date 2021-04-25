@@ -2,8 +2,14 @@ MYSQL_DB_HOST: krysznatec.dedicated.co.za
 MYSQL_DB_NAME: Krysznatec
 MYSQL_DB_PORT: 3306
 cloud:
-    service:
-        url: http://gateway-service:9001
+  service:
+    url:
+      gateway: http://gateway-service:9001
+      aws:  http://aws-service:9002
+      azure: http://azure-service:9003
+      ibm: http://ibm-service:9004
+
+                   
 dataimport:
     fileupload:
         dir: /home/Documents
