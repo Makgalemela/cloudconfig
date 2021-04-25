@@ -16,3 +16,16 @@ spring:
         password: ${MYSQL_DATABASE_PASSWORD:krysznatec@2021}
         url: jdbc:mysql://database-service:3306/krysznatec?useSSL=true&autoReconnect=true
         username: ${MYSQL_DATABASE_USER:krysznatec}
+      feign:
+    client :
+      config :
+        default :
+          connectTimeout: 160000000
+          readTimeout: 160000000
+
+cloud:
+  service:
+    url: http://gateway-service:9001
+    
+file:
+   path: "/"
