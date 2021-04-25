@@ -1,3 +1,18 @@
-cloud:
-  service:
-    url: http://gateway-service:9001/
+logging:
+    file:
+        name: ${user.home}/Documents/aws.log
+    level:
+        org:
+            hibernate: ERROR
+            springframework:
+                web: DEBUG
+spring:
+    data:
+        redis:
+            repositories:
+                enabled: false
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        password: ${MYSQL_DATABASE_PASSWORD:krysznatec@2021}
+        url: jdbc:mysql://database-service:3306/krysznatec?useSSL=true&autoReconnect=true
+        username: ${MYSQL_DATABASE_USER:krysznatec}
