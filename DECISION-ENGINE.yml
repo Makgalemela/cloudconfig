@@ -3,7 +3,7 @@ MYSQL_DB_NAME: Krysznatec
 MYSQL_DB_PORT: 3306
 cloud:
     service:
-        url: http://gateway-service:8080/
+        url: http://gateway-service:9001
 dataimport:
     fileupload:
         dir: /home/Documents
