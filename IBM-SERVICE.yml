@@ -1,0 +1,18 @@
+logging:
+    file:
+        name: ${user.home}/Documents/ibm.log
+    level:
+        org:
+            hibernate: ERROR
+            springframework:
+                web: DEBUG
+spring:
+    data:
+        redis:
+            repositories:
+                enabled: false
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        password: ${MYSQL_DATABASE_PASSWORD:krysznatec@2021}
+        url: jdbc:mysql://database-service:3306/krysznatec?useSSL=true&autoReconnect=true
+        username: ${MYSQL_DATABASE_USER:krysznatec}
