@@ -1,0 +1,3 @@
+cloud:
+  service:
+    url: http://gateway-service:9001/
