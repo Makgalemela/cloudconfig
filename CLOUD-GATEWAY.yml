@@ -25,14 +25,14 @@ zuul:
     routes:
         awsservice:
             path: /api-aws/**
-            serviceId: awsservice
+            serviceId: AWS-SERVICE
             stripPrefix: false
-            url: http://localhost:9002
+            url: http://aws-service:9002
         azureservice:
             path: /api-azure/**
-            serviceId: azureservice
+            serviceId: AZURE-SERVICE
             stripPrefix: false
-            url: http://localhost:9003
+            url: http://azure-service:9003
         CLOUD-GATEWAY:
             path: /api-gateway/**
             serviceId: CLOUD-GATEWAY
@@ -40,9 +40,9 @@ zuul:
             url: http://gateway-service:9001
         ibmservice:
             path: /api-ibm/**
-            serviceId: ibmservice
+            serviceId: IBM-SERVICE
             stripPrefix: false
-            url: http://localhost:9004
+            url: http://ibm-service:9004
         DECISION-ENGINE:
             path: /api/**
             serviceId: DECISION-ENGINE
