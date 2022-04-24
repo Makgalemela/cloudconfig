@@ -28,6 +28,8 @@ management:
             exposure:
                 include: beans,health,routes,httptrace,mappings
 spring:
+    rabbitmq:
+        host: rabbitmq
     devtools:
         restart:
             enabled: true
